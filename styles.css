@@ -1,0 +1,262 @@
+/* Body settings */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('wedding-hall-photozone-flat-color-illustration_151150-3389.avif');  /* Use your image here */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+} 
+
+/* DUDU starts off the screen to the left */
+.dudu {
+  width: 250px;
+  position: absolute;
+  bottom: 70px;
+  left: -300px;  /* Start off-screen */
+  transition: left 5s ease; /* 5-second transition for moving to the center */
+}
+
+/* Pink box starts off the screen to the left and centers horizontally */
+.gift-box {
+  width: 600px;  /* Increased box size */
+  height: 600px; /* Increased box size */
+  position: absolute;
+  top: 50%;      /* Vertically center the box */
+  left: 50%;     /* Horizontally center the box */
+  transform: translate(-50%, -50%); /* Adjust to fully center horizontally and vertically */
+  transition: left 5s ease;    /* Slow 5-second transition to move to the center */
+  display: none; /* Hidden initially */
+}
+
+.box-image {
+  width: 100%;
+  height: auto;
+}
+/* Balloons will appear and float out of the box */
+.balloon {
+  width: 150px;  /* Increased balloon size */
+  height: auto;
+  position: absolute;
+  top: 50%;  /* Start balloons inside the gift box */
+  left: 50%;  /* Horizontally center the balloons with the gift box */
+  transform: translate(-50%, -50%);  /* Ensure centering */
+  opacity: 0;  /* Hidden initially */
+  transition: top 2s ease, left 2s ease, opacity 0.5s ease;  /* Faster transition for movement */
+}
+
+.balloon-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Animation to make the balloons float to the 75% left of the screen */
+.balloon-animate {
+  opacity: 1; /* Make the balloons visible */
+  left: 25%;  /* Move to 25% from the left (which is 75% from the right) */
+  top: 40%;   /* Center vertically */
+}
+/* BUBU starts off-screen to the left */
+.bubu {
+  width: 250px;  /* Adjust BUBU's size */
+  position: absolute;
+  top: 60%;       /* Center vertically */
+  left: -300px;   /* Start BUBU off-screen on the left */
+  transform: translateY(-70%);  /* Vertically center */
+  transition: left 4s ease;     /* 4-second transition for moving to the center */
+}
+/* Message box styling */
+.message-box {
+  width: 400px;  /* Width of the message box */
+  padding: 20px;
+  position: absolute;
+  bottom: -100px;  /* Start off-screen */
+  left: 30%;       /* 30% from the left */
+  background-color: white;
+  border: 2px solid pink;  /* Pink border */
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;      /* Hidden initially */
+  transition: bottom 1s ease, opacity 1s ease;  /* Smooth transition for appearing */
+}
+
+/* Show the message box with proper positioning */
+.message-box-show {
+  bottom: 70%;  /* Move the box up to 70% from the bottom */
+  opacity: 1;   /* Make it visible */
+}
+/* Second message box styling */
+.message-box-2 {
+  position: absolute;
+  bottom: -100px; /* Start off-screen */
+  left: 5%;  /* 10% from the left side */
+  width: 350px;
+  padding: 20px;
+  background-color: white;
+  border: 4px solid pink;
+  border-radius: 15px;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: bottom 1s ease, opacity 0.5s ease;
+}
+
+/* When the second message box is visible */
+.message-box-2-show {
+  bottom: 75%;  /* Position 70% up from the bottom */
+  opacity: 1;   /* Make it visible */
+}
+/* Third message box styling */
+.message-box-3 {
+  position: absolute;
+  bottom: -100px; /* Start off-screen */
+  left: 30%;  /* 30% from the left side */
+  width: 350px;
+  padding: 20px;
+  background-color: white;
+  border: 4px solid pink;
+  border-radius: 15px;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: bottom 1s ease, opacity 0.5s ease;
+}
+
+/* When the third message box is visible */
+.message-box-3-show {
+  bottom: 70%;  /* Position 70% up from the bottom */
+  opacity: 1;   /* Make it visible */
+}
+/* Fourth message box styling */
+.message-box-4 {
+  position: absolute;
+  bottom: -100px; /* Start off-screen */
+  left: 5%;  /* 10% from the left side */
+  width: 350px;
+  padding: 20px;
+  background-color: white;
+  border: 4px solid pink;
+  border-radius: 15px;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: bottom 1s ease, opacity 0.5s ease;
+}
+
+/* When the fourth message box is visible */
+.message-box-4-show {
+  bottom: 75%;  /* Position 70% up from the bottom */
+  opacity: 1;   /* Make it visible */
+}
+/* Ring styling */
+.ring {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  left: 50%;  /* Initially place the ring inside the gift box */
+  top: 50%;
+  transform: translate(-50%, -50%);  /* Center it perfectly */
+  opacity: 0;  /* Fully hidden initially */
+  visibility: hidden;  /* Ensure it's not visible at all */
+  transition: top 1.5s ease, left 1.5s ease, opacity 0.5s ease, visibility 0s 1.5s;  /* Delay visibility until after the movement */
+}
+
+/* Ring pops out to 40% from the bottom and 40% from the left */
+.ring-pop-out {
+  opacity: 1;  /* Make the ring visible */
+  visibility: visible;  /* Ensure visibility when animation starts */
+  left: 50%;   /* Move the ring to 40% from the left */
+  top: 50%;    /* Move the ring to 40% from the bottom */
+}
+/* New movement for the ring to 50% from the bottom and 30% from the left */
+.ring-move {
+  left: 30%;   /* Move the ring to 30% from the left */
+  top: 61%;    /* Move the ring to 50% from the bottom */
+  transition: top 2s ease, left 2s ease; /* Transition for smooth 2-second movement */
+}
+/* New ring styling */
+.new-ring {
+  position: absolute;
+  width: 70px;
+  height: auto;
+  left: 30%;    /* Start in the same position as the previous ring */
+  top: 57%;     /* Start in the same position as the previous ring */
+  transform: translate(-50%, -50%);
+  opacity: 0;   /* Initially hidden */
+  visibility: hidden;  /* Ensure it's not visible initially */
+  transition: left 3s ease, opacity 1s ease;
+}
+
+/* New ring moving 8% to the left */
+.new-ring-move {
+  left: 24%;    /* Move 8% to the left */
+  opacity: 1;   /* Make the new ring visible */
+  visibility: visible;
+}
+/* Fifth message box styling */
+.message-box-5 {
+  position: absolute;
+  bottom: -100px; /* Start off-screen */
+  left: 30%;  /* 30% from the left side */
+  width: 400px;
+  padding: 20px;
+  background-color: white;
+  border: 4px solid pink;
+  border-radius: 15px;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: bottom 1s ease, opacity 0.5s ease;
+}
+
+/* When the fifth message box is visible */
+.message-box-5-show {
+  bottom: 70%;  /* Position 70% up from the bottom */
+  opacity: 1;   /* Make it visible */
+}
+/* Sixth message box styling */
+.message-box-6 {
+  position: absolute;
+  bottom: -100px; /* Start off-screen */
+  left: 5%;  /* 30% from the left side */
+  width: 400px;
+  padding: 20px;
+  background-color: white;
+  border: 4px solid pink;
+  border-radius: 15px;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: bottom 1s ease, opacity 0.5s ease;
+}
+
+/* When the sixth message box is visible */
+.message-box-6-show {
+  bottom: 75%;  /* Position 70% up from the bottom */
+  opacity: 1;   /* Make it visible */
+}
+/* Class to hide all elements including the pink box */
+.hide-all-elements {
+  display: none !important;  /* Forcefully hide all elements */
+}
+
+/* Styling for the new picture that will appear */
+.new-picture {
+  position: absolute;
+  width: 50%;     /* Adjust the size of the new picture */
+  top: 60%;       /* Center vertically */
+  left: 50%;      /* Center horizontally */
+  transform: translate(-50%, -50%);  /* Ensure perfect centering */
+  display: none;  /* Initially hidden */
+}
